@@ -1,0 +1,1574 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vedic Rashi Baby Names | Hindu Astrology Name Finder</title>
+    <meta name="description" content="Find the perfect baby name based on Hindu Vedic astrology Rashi signs. 670+ curated names in English, Hindi & Gujarati with meanings.">
+    <meta name="keywords" content="vedic baby names, rashi names, hindu astrology, baby name finder, moon sign names, sun sign names">
+    <meta name="author" content="Parth Patel">
+    <meta property="og:title" content="Vedic Rashi Baby Names">
+    <meta property="og:description" content="670+ Hindu baby names based on Vedic astrology Rashi signs with meanings in English, Hindi & Gujarati">
+    <meta property="og:type" content="website">
+    <meta name="theme-color" content="#8b5cf6">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🙏</text></svg>">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8b5cf6;
+            --primary-light: #a78bfa;
+            --primary-dark: #6d28d9;
+            --bg-dark: #0f172a;
+            --bg-darker: #020617;
+            --text-primary: #f1f5f9;
+            --text-secondary: #cbd5e1;
+            --border: #1e293b;
+            --accent: #ec4899;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: linear-gradient(135deg, var(--bg-darker) 0%, var(--bg-dark) 100%);
+            color: var(--text-primary);
+            overflow-x: hidden;
+        }
+
+        .app-container {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        /* HEADER */
+        header {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .header-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            letter-spacing: 0.5px;
+        }
+
+        nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        nav a, nav button {
+            color: var(--text-secondary);
+            text-decoration: none;
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+        }
+
+        nav a:hover, nav button:hover {
+            color: var(--primary);
+            background: rgba(139, 92, 246, 0.1);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 6px;
+        }
+
+        .hamburger span {
+            width: 24px;
+            height: 2px;
+            background: var(--text-primary);
+            border-radius: 2px;
+            transition: all 0.3s ease;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(8px, 8px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -7px);
+        }
+
+        /* MAIN CONTENT */
+        main {
+            flex: 1;
+            max-width: 1400px;
+            margin: 0 auto;
+            width: 100%;
+            padding: 2rem 1.5rem;
+        }
+
+        .view {
+            display: none;
+        }
+
+        .view.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* SEARCH & FILTERS */
+        .controls {
+            display: grid;
+            grid-template-columns: 1fr auto auto;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .search-box {
+            position: relative;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 0.75rem 1rem 0.75rem 2.5rem;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            color: var(--text-primary);
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .search-box input::placeholder {
+            color: var(--text-secondary);
+        }
+
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            background: rgba(30, 41, 59, 0.8);
+            box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.1);
+        }
+
+        .search-icon {
+            position: absolute;
+            left: 0.75rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-secondary);
+        }
+
+        .filter-group {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .filter-btn {
+            padding: 0.75rem 1.25rem;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: rgba(139, 92, 246, 0.2);
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        /* HOME PAGE - RASHI GRID */
+        .rashi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .rashi-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .rashi-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, transparent, rgba(139, 92, 246, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .rashi-card:hover {
+            border-color: var(--primary);
+            background: rgba(30, 41, 59, 0.6);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 24px rgba(139, 92, 246, 0.2);
+        }
+
+        .rashi-card:hover::before {
+            opacity: 1;
+        }
+
+        .rashi-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .rashi-symbol {
+            font-size: 3rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .rashi-names {
+            margin-bottom: 1rem;
+        }
+
+        .rashi-hindi {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .rashi-english {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 0.25rem;
+        }
+
+        .rashi-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid var(--border);
+            font-size: 0.85rem;
+        }
+
+        .detail-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+        }
+
+        .detail-label {
+            color: var(--text-secondary);
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .detail-value {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .rashi-count {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--primary);
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* RASHI DETAIL */
+        .rashi-detail-header {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .rashi-detail-header .symbol {
+            font-size: 3rem;
+        }
+
+        .rashi-detail-header h1 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+
+        .rashi-detail-header .hindi {
+            font-size: 1.25rem;
+            color: var(--text-secondary);
+        }
+
+        .back-btn {
+            padding: 0.75rem 1.5rem;
+            background: rgba(139, 92, 246, 0.2);
+            border: 1px solid var(--primary);
+            border-radius: 0.75rem;
+            color: var(--primary);
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .back-btn:hover {
+            background: rgba(139, 92, 246, 0.3);
+        }
+
+        .names-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .name-card {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .name-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .name-card:hover {
+            border-color: var(--primary);
+            background: rgba(30, 41, 59, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(139, 92, 246, 0.15);
+        }
+
+        .name-card-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .name-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .name-meaning {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            margin-bottom: 0.75rem;
+            line-height: 1.4;
+        }
+
+        .name-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.35rem;
+            align-items: center;
+            padding-top: 0.75rem;
+            border-top: 1px solid var(--border);
+        }
+
+        .name-gender {
+            font-size: 0.75rem;
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--primary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+        }
+
+        .name-favorite {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            width: 32px;
+            height: 32px;
+            background: rgba(15, 23, 42, 0.7);
+            border: 1px solid var(--border);
+            border-radius: 50%;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--text-secondary);
+            z-index: 5;
+        }
+
+        .name-favorite:hover {
+            transform: scale(1.15);
+            background: rgba(236, 72, 153, 0.15);
+            border-color: #ec4899;
+            color: #ec4899;
+        }
+
+        .name-favorite.active {
+            color: #ec4899;
+            background: rgba(236, 72, 153, 0.15);
+            border-color: #ec4899;
+        }
+
+        .name-tag {
+            font-size: 0.65rem;
+            padding: 0.15rem 0.4rem;
+            border-radius: 0.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.3px;
+        }
+        .name-tag-popular { background: rgba(34,197,94,0.15); color: #22c55e; }
+        .name-tag-unique { background: rgba(168,85,247,0.15); color: #a855f7; }
+        .name-tag-powerful { background: rgba(245,158,11,0.15); color: #f59e0b; }
+        .name-tag-simple { background: rgba(96,165,250,0.15); color: #60a5fa; }
+        .name-tag-special { background: rgba(236,72,153,0.15); color: #ec4899; }
+
+        /* NAME DETAIL PAGE */
+        .name-detail-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .name-detail-hero {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.1), rgba(236, 72, 153, 0.1));
+            border: 1px solid var(--border);
+            border-radius: 1rem;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .name-detail-english {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .name-detail-hindi {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        .name-detail-gujarati {
+            font-size: 1.5rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+        }
+
+        .name-detail-meaning {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .detail-section {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .detail-section h3 {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .detail-section-content {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .detail-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 0.75rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .detail-row:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .detail-label-text {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+
+        .detail-value-text {
+            color: var(--text-primary);
+            font-weight: 500;
+        }
+
+        .tags-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tag {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--primary);
+            padding: 0.35rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        /* FAVORITES PAGE */
+        .favorites-empty {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--text-secondary);
+        }
+
+        .favorites-empty p {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+
+        .favorites-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .favorites-actions {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .action-btn {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border: none;
+            border-radius: 0.75rem;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .action-btn:hover {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 16px rgba(139, 92, 246, 0.3);
+        }
+
+        .action-btn.secondary {
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+
+        .action-btn.secondary:hover {
+            background: rgba(139, 92, 246, 0.3);
+        }
+
+        /* SURPRISE ME */
+        .surprise-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 60vh;
+            text-align: center;
+        }
+
+        .surprise-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .surprise-select {
+            padding: 0.75rem 1rem;
+            background: rgba(30, 41, 59, 0.5);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+
+        .surprise-select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .surprise-btn {
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            border: none;
+            border-radius: 0.75rem;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .surprise-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 12px 24px rgba(139, 92, 246, 0.3);
+        }
+
+        .surprise-result {
+            display: none;
+        }
+
+        .surprise-result.active {
+            display: block;
+            animation: slideUp 0.5s ease;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .surprise-name-card {
+            background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.2));
+            border: 2px solid var(--primary);
+            border-radius: 1rem;
+            padding: 3rem 2rem;
+            margin-top: 2rem;
+        }
+
+        .surprise-name {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .surprise-meaning {
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .surprise-rashi {
+            display: inline-block;
+            background: rgba(139, 92, 246, 0.2);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+        }
+
+        /* SUGGEST & SHARE */
+        .suggest-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .suggest-rashi-section {
+            background: rgba(30, 41, 59, 0.4);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .suggest-rashi-title {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        .suggest-rashi-symbol {
+            font-size: 2rem;
+        }
+
+        .suggest-selects {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .select-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .select-group label {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .select-group select {
+            padding: 0.75rem;
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--border);
+            border-radius: 0.5rem;
+            color: var(--text-primary);
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .select-group select:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .suggest-submit-btn {
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            border: none;
+            border-radius: 0.75rem;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1rem;
+            width: 100%;
+            transition: all 0.3s ease;
+        }
+
+        .suggest-submit-btn:hover {
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 100%);
+            transform: translateY(-2px);
+        }
+
+        /* SHARE PREVIEW */
+        .share-preview {
+            display: none;
+        }
+
+        .share-preview.active {
+            display: block;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .share-text-box {
+            background: rgba(15, 23, 42, 0.5);
+            border: 1px solid var(--border);
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin: 1.5rem 0;
+            white-space: pre-wrap;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.6;
+            max-height: 400px;
+            overflow-y: auto;
+        }
+
+        .copy-btn {
+            padding: 0.75rem 1.5rem;
+            background: linear-gradient(135deg, var(--accent) 0%, #f472b6 100%);
+            border: none;
+            border-radius: 0.75rem;
+            color: white;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .copy-btn:hover {
+            background: linear-gradient(135deg, #db2777 0%, var(--accent) 100%);
+            transform: translateY(-2px);
+        }
+
+        .copy-btn.copied {
+            background: #10b981;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 768px) {
+            .controls {
+                grid-template-columns: 1fr;
+            }
+
+            .filter-group {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                gap: 1rem;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav:not(.mobile-nav-open) {
+                display: none;
+            }
+
+            nav.mobile-nav-open {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: var(--bg-dark);
+                border-bottom: 1px solid var(--border);
+                flex-direction: column;
+                padding: 1rem;
+                gap: 0.5rem;
+            }
+
+            .rashi-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            }
+
+            .rashi-detail-header {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .names-grid {
+                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            }
+
+            .suggest-selects {
+                grid-template-columns: 1fr;
+            }
+
+            .favorites-actions {
+                flex-direction: column;
+            }
+
+            .action-btn {
+                width: 100%;
+            }
+
+            main {
+                padding: 1rem 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                font-size: 1.1rem;
+            }
+
+            .rashi-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .names-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .name-detail-english {
+                font-size: 2rem;
+            }
+
+            .surprise-name {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="header-container">
+                <div class="logo">Vedic Rashi Names</div>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                <nav id="nav-menu">
+                    <a href="#" onclick="showView('home'); return false;">Home</a>
+                    <a href="#" onclick="showView('surprise'); return false;">Surprise Me</a>
+                    <a href="#" onclick="showView('suggest'); return false;">Suggest & Share</a>
+                    <button onclick="showView('favorites')">♡ Favorites</button>
+                </nav>
+            </div>
+        </header>
+
+        <main>
+            <!-- HOME PAGE -->
+            <div id="home" class="view active">
+                <div class="controls">
+                    <div class="search-box">
+                        <span class="search-icon">🔍</span>
+                        <input type="text" id="searchInput" placeholder="Search names..." onkeyup="filterNames()">
+                    </div>
+                    <div class="filter-group">
+                        <button class="filter-btn active" onclick="filterByGender('all')">All</button>
+                        <button class="filter-btn" onclick="filterByGender('boy')">Boys</button>
+                        <button class="filter-btn" onclick="filterByGender('girl')">Girls</button>
+                    </div>
+                    <div class="filter-group">
+                        <button class="filter-btn active" onclick="filterByType('all')">All Types</button>
+                        <button class="filter-btn" onclick="filterByType('popular')">Popular</button>
+                        <button class="filter-btn" onclick="filterByType('unique')">Unique</button>
+                    </div>
+                </div>
+                <div class="rashi-grid" id="rashiGrid"></div>
+            </div>
+
+            <!-- RASHI DETAIL PAGE -->
+            <div id="rashi-detail" class="view">
+                <button class="back-btn" onclick="showView('home')">← Back to All Rashis</button>
+                <div class="rashi-detail-header">
+                    <span class="symbol" id="detailSymbol"></span>
+                    <div>
+                        <h1 id="detailEnglishName"></h1>
+                        <div class="hindi" id="detailHindiName"></div>
+                    </div>
+                </div>
+                <div class="names-grid" id="rashiNamesGrid"></div>
+            </div>
+
+            <!-- NAME DETAIL PAGE -->
+            <div id="name-detail" class="view">
+                <button class="back-btn" onclick="goBack()">← Back</button>
+                <div class="name-detail-container">
+                    <div class="name-detail-hero">
+                        <div class="name-detail-english" id="nameEnglish"></div>
+                        <div class="name-detail-hindi" id="nameHindi"></div>
+                        <div class="name-detail-gujarati" id="nameGujarati"></div>
+                        <div class="name-detail-meaning" id="nameMeaningEnglish"></div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Information</h3>
+                        <div class="detail-section-content">
+                            <div class="detail-row">
+                                <span class="detail-label-text">Gender</span>
+                                <span class="detail-value-text" id="detailGender"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label-text">Rashi</span>
+                                <span class="detail-value-text" id="detailRashiName"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label-text">Element</span>
+                                <span class="detail-value-text" id="detailElement"></span>
+                            </div>
+                            <div class="detail-row">
+                                <span class="detail-label-text">Ruling Planet</span>
+                                <span class="detail-value-text" id="detailRuler"></span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Meaning</h3>
+                        <div class="detail-section-content">
+                            <div>
+                                <p style="color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 0.5rem;"><strong>English:</strong></p>
+                                <p id="nameMeaning" style="color: var(--text-primary);"></p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="detail-section">
+                        <h3>Tags</h3>
+                        <div class="tags-container" id="nameTags"></div>
+                    </div>
+
+                    <div style="text-align: center; margin-top: 2rem;">
+                        <button class="action-btn" onclick="toggleFavoriteFromDetail()">
+                            <span id="favBtnText">♡ Add to Favorites</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAVORITES PAGE -->
+            <div id="favorites" class="view">
+                <h2 style="font-size: 2rem; margin-bottom: 2rem;">My Favorite Names</h2>
+                <div class="favorites-actions" id="favoritesActions" style="display: none;">
+                    <button class="action-btn" onclick="shareAsText()">Share My Favorites</button>
+                    <button class="action-btn secondary" onclick="clearAllFavorites()">Clear All</button>
+                </div>
+                <div class="favorites-empty" id="favoritesEmpty">
+                    <p>No favorites yet.</p>
+                    <p style="font-size: 1rem; color: var(--text-secondary);">Click the heart icon on any name to add it here!</p>
+                </div>
+                <div class="favorites-list" id="favoritesList"></div>
+            </div>
+
+            <!-- SURPRISE ME PAGE -->
+            <div id="surprise" class="view">
+                <div class="surprise-container">
+                    <h2 style="font-size: 2rem; margin-bottom: 1rem;">Surprise Me!</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Get a random name suggestion</p>
+
+                    <div class="surprise-controls">
+                        <select id="surpriseGender" class="surprise-select">
+                            <option value="all">All Genders</option>
+                            <option value="boy">Boy Names</option>
+                            <option value="girl">Girl Names</option>
+                        </select>
+                        <select id="surpriseRashi" class="surprise-select">
+                            <option value="">Any Rashi</option>
+                            <option value="mesh">Mesh (Aries)</option>
+                            <option value="vrishabh">Vrishabh (Taurus)</option>
+                            <option value="mithun">Mithun (Gemini)</option>
+                            <option value="kark">Kark (Cancer)</option>
+                            <option value="singh">Singh (Leo)</option>
+                            <option value="kanya">Kanya (Virgo)</option>
+                            <option value="tula">Tula (Libra)</option>
+                            <option value="vrishchik">Vrishchik (Scorpio)</option>
+                            <option value="dhanu">Dhanu (Sagittarius)</option>
+                            <option value="makar">Makar (Capricorn)</option>
+                            <option value="kumbh">Kumbh (Aquarius)</option>
+                            <option value="meen">Meen (Pisces)</option>
+                        </select>
+                        <button class="surprise-btn" onclick="surpriseMe()">Pick for Me!</button>
+                    </div>
+
+                    <div class="surprise-result" id="surpriseResult">
+                        <div class="surprise-name-card">
+                            <div class="surprise-name" id="surpriseName"></div>
+                            <div class="surprise-rashi" id="surpriseRashiLabel"></div>
+                            <div class="surprise-meaning" id="surpriseMeaning"></div>
+                            <button class="action-btn" onclick="addSurpriseToFavorites()" style="margin-top: 1rem;">♡ Add to Favorites</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SUGGEST & SHARE PAGE -->
+            <div id="suggest" class="view">
+                <div class="suggest-container">
+                    <h2 style="font-size: 2rem; margin-bottom: 0.5rem;">Suggest Your Favorite Names</h2>
+                    <p style="color: var(--text-secondary); margin-bottom: 2rem;">Pick one boy and one girl name from each Rashi</p>
+
+                    <form id="suggestForm" onsubmit="submitSuggestions(event)">
+                        <div id="suggestRashiSections"></div>
+                        <button type="submit" class="suggest-submit-btn" style="margin-top: 2rem;">Generate Suggestions</button>
+                    </form>
+
+                    <div class="share-preview" id="sharePreview">
+                        <h3 style="margin-bottom: 1rem;">Your Suggestions</h3>
+                        <div class="share-text-box" id="shareText"></div>
+                        <button class="copy-btn" onclick="copyToClipboard()">Copy to Share</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // DATA
+        const RASHIS = [
+            {id:"mesh",name:"मेष",eng:"Aries",short:"Mesh",symbol:"♈",color:"#ef4444",element:"Fire",ruler:"Mars",letters:"Chu, Che, Cho, La, Li, Lu, Le, Lo, A"},
+            {id:"vrishabh",name:"वृषभ",eng:"Taurus",short:"Vrishabh",symbol:"♉",color:"#22c55e",element:"Earth",ruler:"Venus",letters:"Ba, Va, U, Ee, O, Wa"},
+            {id:"mithun",name:"मिथुन",eng:"Gemini",short:"Mithun",symbol:"♊",color:"#eab308",element:"Air",ruler:"Mercury",letters:"Ka, Ki, Ku, Gha, Ng, Chh, Ke, Ko, Ha"},
+            {id:"kark",name:"कर्क",eng:"Cancer",short:"Kark",symbol:"♋",color:"#6366f1",element:"Water",ruler:"Moon",letters:"Hi, Hu, He, Ho, Da, Di, Du, De, Do"},
+            {id:"singh",name:"सिंह",eng:"Leo",short:"Singh",symbol:"♌",color:"#f97316",element:"Fire",ruler:"Sun",letters:"Ma, Mi, Mu, Me, Mo, Ta, Ti, Tu, Te"},
+            {id:"kanya",name:"कन्या",eng:"Virgo",short:"Kanya",symbol:"♍",color:"#10b981",element:"Earth",ruler:"Mercury",letters:"To, Pa, Pi, Pu, Sha, Na, Th, Pe, Po"},
+            {id:"tula",name:"तुला",eng:"Libra",short:"Tula",symbol:"♎",color:"#ec4899",element:"Air",ruler:"Venus",letters:"Ra, Ri, Ru, Re, Ro, Ta, Ti, Tu, Te"},
+            {id:"vrishchik",name:"वृश्चिक",eng:"Scorpio",short:"Vrishchik",symbol:"♏",color:"#dc2626",element:"Water",ruler:"Mars",letters:"Na, Ni, Nu, Ne, No, Ya, Yi, Yu"},
+            {id:"dhanu",name:"धनु",eng:"Sagittarius",short:"Dhanu",symbol:"♐",color:"#8b5cf6",element:"Fire",ruler:"Jupiter",letters:"Ye, Yo, Bha, Bhi, Bhu, Dha, Pha, Dhe, Bhe"},
+            {id:"makar",name:"मकर",eng:"Capricorn",short:"Makar",symbol:"♑",color:"#64748b",element:"Earth",ruler:"Saturn",letters:"Kha, Khi, Khu, Khe, Kho, Ga, Gi, Gu, Ge"},
+            {id:"kumbh",name:"कुम्भ",eng:"Aquarius",short:"Kumbh",symbol:"♒",color:"#06b6d4",element:"Air",ruler:"Saturn",letters:"Gu, Ge, Go, Sa, Si, Su, Se, So, Da"},
+            {id:"meen",name:"मीन",eng:"Pisces",short:"Meen",symbol:"♓",color:"#14b8a6",element:"Water",ruler:"Jupiter",letters:"Di, Du, Tha, Jha, De, Do, Cha, Chi"}
+        ];
+
+        function N(name, meaning, gender, tags) {
+            return {name, meaning, gender, tags};
+        }
+
+        const NAMES_BY_RASHI = {
+            mesh: [N("Aarav","Noble, wise","boy",["popular"]),N("Aditya","Sun god","boy",["popular","powerful"]),N("Arjun","Bright, shining","boy",["popular"]),N("Aadhya","First power","girl",["popular"]),N("Ananya","Unique, matchless","girl",["popular"]),N("Aarna","Goddess Lakshmi","girl",["popular","powerful"]),N("Lakshay","Target, aim","boy",["popular"]),N("Lalit","Beautiful, elegant","boy",["simple"]),N("Lavanya","Grace, beauty","girl",["popular"]),N("Luv","Son of Lord Rama","boy",["simple","special"]),N("Chetan","Consciousness","boy",["simple"]),N("Chirag","Lamp, light","boy",["popular"]),N("Lata","Creeper, vine","girl",["simple"]),N("Leela","Divine play","girl",["powerful","special"]),N("Lochan","Eye, bright","boy",["unique"]),N("Aarush","First ray of sun","boy",["popular","powerful"]),N("Abhinav","Novel, innovative","boy",["popular"]),N("Achyut","Indestructible","boy",["powerful","special"]),N("Amrit","Immortal nectar","unisex",["powerful"]),N("Avni","Earth","girl",["unique"]),N("Aisha","Alive, prosperous","girl",["popular"]),N("Lekha","Writing, document","girl",["unique"]),N("Lomash","Sage name","boy",["unique","special"]),N("Chunmay","Pure consciousness","boy",["unique","powerful"]),N("Aditi","Mother of gods","girl",["popular","powerful"]),N("Arya","Noble, honorable","unisex",["popular","powerful"]),N("Akshay","Immortal","boy",["popular"]),N("Atharv","Name of a Veda","boy",["popular","powerful"]),N("Anvi","Forest goddess","girl",["popular"]),N("Aarohi","Musical note","girl",["unique"]),N("Likhit","Written, destiny","boy",["unique"]),N("Lalita","Elegant, playful","girl",["powerful","special"]),N("Charu","Beautiful","girl",["simple"]),N("Abhay","Fearless","boy",["powerful"]),N("Akshara","Imperishable","girl",["powerful"]),N("Arnav","Ocean","boy",["popular"]),N("Lakshmi","Goddess of wealth","girl",["popular","powerful","special"]),N("Latika","A small creeper","girl",["simple"]),N("Chinmay","Full of knowledge","boy",["powerful"]),N("Lohit","Red, made of copper","boy",["unique"]),N("Anurag","Love, affection","boy",["simple"]),N("Avantika","Princess of Ujjain","girl",["unique","special"]),N("Archana","Worship","girl",["simple"]),N("Ashwin","Light, horse tamer","boy",["popular"]),N("Chandni","Moonlight","girl",["simple"]),N("Chaitanya","Consciousness","boy",["powerful","special"]),N("Aayush","Long life","boy",["popular"]),N("Lokesh","Lord of the world","boy",["powerful"]),N("Angira","Vedic sage","boy",["unique","special"]),N("Lopa","Wise woman sage","girl",["unique","special"]),N("Advait","Unique, non-dual","boy",["powerful","unique"]),N("Amara","Immortal, eternal","girl",["unique","powerful"]),N("Charvi","Beautiful girl","girl",["simple"]),N("Anamika","Without a name, ring finger","girl",["unique"]),N("Chitvan","Glance, look","girl",["unique"]),N("Abhi","Fearless","boy",["simple"]),N("Aarini","Adventurous","girl",["unique"]),N("Chitransh","Part of an image","boy",["unique"]),N("Amogh","Unerring","boy",["powerful","special"]),N("Labdhi","Attainment","girl",["unique","powerful"]),N("Aadvik","Unique","boy",["unique"]),N("Achala","Steadfast earth","girl",["powerful"]),N("Akhil","Complete","boy",["popular"]),N("Alka","Young woman","girl",["simple"]),N("Amay","Lord Ganesha","boy",["powerful","special"]),N("Ansh","Portion, ray","boy",["popular"]),N("Aparna","Goddess Parvati","girl",["powerful","special"]),N("Chiranjiv","Immortal","boy",["powerful"]),N("Lajja","Modesty","girl",["unique"]),N("Aadhira","Moon","girl",["unique","powerful"]),N("Aakash","Sky","boy",["popular"]),N("Laksha","White rose","girl",["unique"]),N("Chayanika","Chosen one","girl",["unique"]),N("Lavan","Handsome, salty","boy",["simple"]),N("Aritra","One who guides","boy",["unique"]),N("Arunima","Glow of dawn","girl",["unique"]),N("Chitraksh","Beautiful eyes","boy",["unique"]),N("Lilavati","Playful, Goddess","girl",["powerful","special"]),N("Lopamudra","Great sage wife","girl",["unique","special"]),N("Aahana","First ray of dawn","girl",["popular"]),N("Lokajit","Conqueror of world","boy",["powerful"]),N("Amolika","Priceless","girl",["unique"]),N("Chirayu","Long life","boy",["powerful"]),N("Anvit","Understood, found","boy",["unique"]),N("Ashutosh","Lord Shiva","boy",["popular","powerful"]),N("Labhya","Obtainable","boy",["unique"]),N("Lokpriya","Loved by all","boy",["simple"]),N("Anahita","Graceful","girl",["unique"]),N("Lakshit","Distinguished","boy",["popular"]),N("Aadya","First, Goddess Durga","girl",["popular","powerful"]),N("Anjali","Offering","girl",["popular","simple"]),N("Alok","Brightness, vision","boy",["simple"]),N("Anvesha","Curiosity","girl",["unique"]),N("Chitresh","Lord of mind","boy",["powerful"]),N("Aadesh","Command, message","boy",["simple"]),N("Chaturved","Knower of 4 Vedas","boy",["powerful","special"]),N("Anvay","Logical connection","boy",["unique"]),N("Ambar","Sky","boy",["simple"]),N("Chitralekha","Artistic line","girl",["unique","special"])],
+            vrishabh: [N("Vivaan","Full of life","boy",["popular"]),N("Varun","God of water","boy",["popular","powerful"]),N("Vansh","Lineage","boy",["popular"]),N("Vanya","Gracious gift of God","girl",["popular"]),N("Bala","Strength, young","boy",["simple"]),N("Bhavya","Grand, splendid","unisex",["popular"]),N("Uma","Goddess Parvati","girl",["powerful","special"]),N("Eesha","Goddess Parvati","girl",["powerful"]),N("Ojas","Vigor, energy","boy",["powerful","unique"]),N("Vaibhav","Prosperity","boy",["popular"]),N("Vrinda","Sacred basil, Radha","girl",["popular","powerful"]),N("Utkarsh","Prosperity, awakening","boy",["popular"]),N("Bansi","Flute","boy",["simple","special"]),N("Bhoomi","Earth","girl",["popular"]),N("Vedant","Ultimate knowledge","boy",["popular","powerful"]),N("Unnati","Progress","girl",["simple"]),N("Vasudha","Earth","girl",["powerful"]),N("Baani","Earth, speech","girl",["unique"]),N("Urvi","Earth, wide","girl",["unique"]),N("Virat","Massive, great","boy",["popular"]),N("Brij","Lord Krishna's place","boy",["simple","special"]),N("Uday","Rising, dawn","boy",["simple"]),N("Vaishnavi","Devotee of Vishnu","girl",["popular","powerful"]),N("Bhavin","Living, existing","boy",["simple"]),N("Ujjwal","Bright, radiant","boy",["popular"]),N("Vasundhara","Earth","girl",["powerful"]),N("Omkar","Sacred Om sound","boy",["powerful","special"]),N("Ekta","Unity","girl",["simple"]),N("Vani","Speech, voice","girl",["simple"]),N("Bhairavi","Goddess Durga","girl",["powerful","special"]),N("Vallabh","Dear, beloved","boy",["simple"]),N("Vanshika","Of noble lineage","girl",["popular"]),N("Vedika","Altar, consciousness","girl",["popular","powerful"]),N("Balraj","Mighty king","boy",["powerful"]),N("Urja","Energy, nutrition","girl",["unique"]),N("Udayan","Rising, prosperity","boy",["unique"]),N("Vishesh","Special, unique","boy",["unique"]),N("Ojaswi","Bright, lustrous","girl",["unique","powerful"]),N("Vijay","Victory","boy",["popular"]),N("Bhuvan","World, universe","boy",["simple"]),N("Vandana","Worship, prayer","girl",["simple"]),N("Upasana","Worship, devotion","girl",["simple"]),N("Vridhi","Growth","girl",["unique"]),N("Balakrishna","Young Krishna","boy",["powerful","special"]),N("Varsha","Rain","girl",["simple"]),N("Bhavika","Cheerful, righteous","girl",["simple"]),N("Vinay","Modesty","boy",["simple"]),N("Vasuki","Serpent king","boy",["powerful","special"]),N("Ekansh","Whole, complete","boy",["unique"]),N("Urvashi","Celestial maiden","girl",["unique","special"]),N("Viraj","Resplendent","boy",["popular","powerful"]),N("Bharat","India, devoted","boy",["popular","powerful"]),N("Umang","Enthusiasm","unisex",["simple"]),N("Vallari","Creeper","girl",["unique"]),N("Vasudeva","Father of Krishna","boy",["powerful","special"]),N("Bhavesh","Lord Shiva","boy",["popular","powerful"]),N("Vagisha","Goddess Saraswati","girl",["powerful","special"]),N("Bhadra","Blessed, fortunate","unisex",["simple"]),N("Utpala","Lotus","girl",["unique","special"]),N("Vidhya","Knowledge","girl",["simple"]),N("Balwan","Powerful","boy",["powerful"]),N("Utsav","Festival","boy",["popular"]),N("Bodhi","Awakening, wisdom","boy",["unique","powerful"]),N("Vanraj","King of forest","boy",["powerful"]),N("Vishwas","Trust, faith","boy",["simple"]),N("Bhumi","Land, earth","girl",["popular"]),N("Varad","Granting boons","boy",["powerful","special"]),N("Vijaya","Victory","girl",["popular","powerful"]),N("Brinda","Tulsi, sacred basil","girl",["simple","special"]),N("Uddhav","Krishna's friend","boy",["unique","special"]),N("Vishal","Grand, immense","boy",["popular"]),N("Bhumika","Role, earth","girl",["popular"]),N("Vedanshi","Part of Vedas","girl",["powerful","unique"]),N("Brijesh","Lord of Brij","boy",["powerful","special"]),N("Vinita","Humble","girl",["simple"]),N("Upendra","Lord Vishnu","boy",["powerful","special"]),N("Veera","Brave","girl",["powerful"]),N("Vibha","Radiance","girl",["unique"])],
+            mithun: [N("Krishna","Dark, Lord Krishna","boy",["popular","powerful","special"]),N("Kabir","Great, powerful","boy",["popular"]),N("Kavya","Poetry","girl",["popular"]),N("Kiara","Light, first ray","girl",["popular"]),N("Karan","Ear, compassionate","boy",["popular"]),N("Harsh","Joy, happiness","boy",["popular"]),N("Harini","Deer, green","girl",["simple"]),N("Kunal","Lotus, bird","boy",["popular"]),N("Keya","Monsoon flower","girl",["unique"]),N("Gaurav","Pride, honor","boy",["popular"]),N("Ghanashyam","Dark cloud, Krishna","boy",["powerful","special"]),N("Komal","Soft, tender","girl",["simple"]),N("Hitesh","Lord of goodness","boy",["simple"]),N("Kirtana","Devotional song","girl",["unique","special"]),N("Khushi","Happiness","girl",["popular"]),N("Hemant","Winter, gold","boy",["simple"]),N("Keshav","Lord Vishnu","boy",["popular","powerful"]),N("Gauri","Fair, Parvati","girl",["popular","powerful"]),N("Kishan","Lord Krishna","boy",["popular","powerful"]),N("Hridaya","Heart","unisex",["simple"]),N("Kumari","Princess","girl",["simple"]),N("Govind","Lord Krishna","boy",["popular","powerful","special"]),N("Kavi","Poet, wise","boy",["unique"]),N("Kashmira","From Kashmir","girl",["unique"]),N("Hari","Lord Vishnu, green","boy",["popular","powerful"]),N("Kumud","Lotus","unisex",["unique"]),N("Gita","Song, Bhagavad Gita","girl",["simple","special"]),N("Kunj","Bower, grove","boy",["simple"]),N("Kalash","Sacred pot","boy",["unique","powerful"]),N("Kashvi","Shining, bright","girl",["popular"]),N("Gangotri","Sacred origin of Ganga","girl",["unique","special"]),N("Haripriya","Beloved of Vishnu","girl",["powerful","special"]),N("Kuber","God of wealth","boy",["powerful","special"]),N("Kalyani","Auspicious","girl",["popular","powerful"]),N("Gopal","Cowherd, Krishna","boy",["simple","special"]),N("Kushal","Skillful, clever","boy",["simple"]),N("Hansa","Swan, soul","girl",["unique","special"]),N("Kinjal","River bank","girl",["unique"]),N("Gulshan","Garden","boy",["simple"]),N("Kedarnath","Lord Shiva","boy",["powerful","special"]),N("Hiral","Lustrous","girl",["unique"]),N("Karunya","Mercy, compassion","girl",["unique","powerful"]),N("Girish","Lord Shiva","boy",["powerful"]),N("Kadambari","Novel, goddess","girl",["unique","special"]),N("Hardik","Heartfelt","boy",["popular"]),N("Kumkum","Vermillion","girl",["simple"]),N("Kritika","Star, Pleiades","girl",["unique","powerful"]),N("Harsha","Joy, delight","girl",["simple"]),N("Kuldeep","Light of family","boy",["simple"]),N("Kaustubh","Jewel of Vishnu","boy",["powerful","special"]),N("Gayatri","Sacred verse","girl",["popular","powerful","special"]),N("Ketki","A flower","girl",["unique"]),N("Hrishikesh","Lord of senses","boy",["powerful","special"]),N("Krish","Lord Krishna","boy",["popular","powerful"]),N("Kavish","King of poets","boy",["unique"]),N("Kailash","Lord Shiva's abode","boy",["powerful","special"]),N("Kamala","Lotus, Goddess Lakshmi","girl",["powerful","special"]),N("Giridhar","Lord Krishna","boy",["powerful","special"]),N("Kanishk","Ancient king","boy",["unique"]),N("Kartikey","Lord Murugan","boy",["popular","powerful"]),N("Kunti","Mother of Pandavas","girl",["unique","special"]),N("Kaveri","Sacred river","girl",["unique","special"]),N("Gokul","Cow pasture, Krishna's home","boy",["simple","special"]),N("Kishori","Young girl","girl",["simple"]),N("Gargi","Ancient woman scholar","girl",["unique","special"]),N("Harshit","Joyful","boy",["popular"]),N("Kirti","Fame, glory","girl",["popular"]),N("Hansika","Beautiful swan","girl",["popular"]),N("Gitanjali","Song offering","girl",["unique","special"])],
+            kark: [N("Daksh","Skillful, competent","boy",["popular"]),N("Divya","Divine, brilliant","girl",["popular"]),N("Diya","Lamp, light","girl",["popular"]),N("Dhruv","Pole star, constant","boy",["popular","powerful"]),N("Deepika","Little lamp","girl",["popular"]),N("Himanshu","Moon","boy",["popular"]),N("Drishti","Sight, vision","girl",["popular"]),N("Dev","God, divine","boy",["simple","powerful"]),N("Hima","Snow, frost","girl",["simple"]),N("Darsh","Sight, Lord Krishna","boy",["unique","powerful"]),N("Diksha","Initiation","girl",["popular"]),N("Durga","Invincible goddess","girl",["popular","powerful","special"]),N("Daivik","By God's grace","boy",["unique"]),N("Hridaan","Gift of heart","boy",["unique"]),N("Devi","Goddess","girl",["simple","powerful"]),N("Devansh","Part of God","boy",["popular"]),N("Himani","Snow, Parvati","girl",["simple"]),N("Dulari","Dear one","girl",["simple"]),N("Dakshina","Offering","girl",["simple"]),N("Hiresh","King of gems","boy",["unique","powerful"]),N("Devyani","Chariot of gods","girl",["unique","special"]),N("Durvesh","Lord Shiva","boy",["powerful","special"]),N("Dhanya","Blessed, thankful","girl",["simple"]),N("Devarshi","Divine sage","boy",["powerful","special"]),N("Hunar","Skill, talent","unisex",["unique"]),N("Darshini","One who blesses","girl",["simple"]),N("Divit","Immortal","boy",["popular"]),N("Dhanush","Bow of Lord Rama","boy",["popular","powerful"]),N("Devesh","Lord of gods","boy",["powerful"]),N("Heera","Diamond","girl",["simple"]),N("Deepti","Brightness","girl",["simple"]),N("Divyansh","Part of divine light","boy",["popular"]),N("Himadri","Himalaya","boy",["unique"]),N("Dhiraj","Patience","boy",["simple"]),N("Devki","Mother of Krishna","girl",["powerful","special"]),N("Hiranya","Golden","boy",["unique","powerful"]),N("Deeksha","Dedication","girl",["popular"]),N("Dhairya","Patience, courage","boy",["popular","powerful"]),N("Dhanveer","Charitable hero","boy",["powerful"]),N("Divija","Born in heaven","girl",["unique","powerful"]),N("Disha","Direction","girl",["simple"]),N("Dhyaan","Meditation","boy",["powerful","special"]),N("Damini","Lightning","girl",["unique"]),N("Devrat","Devoted to God","boy",["powerful","special"]),N("Dakshesh","Lord Shiva","boy",["powerful","special"]),N("Dharmik","Righteous","boy",["simple"]),N("Debashish","Blessed by gods","boy",["popular"]),N("Deepshikha","Flame","girl",["unique"]),N("Devdas","Servant of God","boy",["simple","special"]),N("Himaja","Daughter of Himalayas","girl",["unique","powerful"]),N("Dhvani","Sound, voice","girl",["unique"]),N("Dashrath","Ten chariots, Rama's father","boy",["unique","special"]),N("Devyanshi","Part of Goddess","girl",["unique","powerful"]),N("Dhyana","Meditation","girl",["powerful","special"]),N("Devananda","Joy of God","boy",["powerful"]),N("Divjot","Divine light","unisex",["unique","powerful"]),N("Harshvardhan","Enhancer of joy","boy",["popular"]),N("Deepanjali","Light offering","girl",["unique","special"]),N("Draupadi","Great queen","girl",["unique","special"]),N("Deepali","Row of lamps","girl",["popular"]),N("Devraj","King of gods","boy",["powerful"])],
+            singh: [N("Manav","Human, kind","boy",["popular"]),N("Mira","Devotee, ocean","girl",["popular","special"]),N("Tanvi","Beautiful, delicate","girl",["popular"]),N("Mihir","Sun","boy",["popular","powerful"]),N("Tara","Star","girl",["simple"]),N("Mohan","Charming, Krishna","boy",["popular","powerful"]),N("Meera","Devotee saint","girl",["popular","special"]),N("Tejasvi","Radiant, brilliant","boy",["powerful"]),N("Mahi","Earth","girl",["simple"]),N("Tushar","Snow, frost","boy",["simple"]),N("Mukund","Lord Krishna","boy",["popular","powerful","special"]),N("Tanisha","Ambition","girl",["popular"]),N("Mayank","Moon","boy",["popular"]),N("Trisha","Noble, wish","girl",["popular"]),N("Madhav","Lord Krishna","boy",["popular","powerful","special"]),N("Teerth","Sacred place","boy",["powerful","special"]),N("Mitali","Friendly","girl",["simple"]),N("Tarun","Young","boy",["simple"]),N("Manisha","Intellect","girl",["simple"]),N("Tejas","Radiance, brilliance","boy",["popular","powerful"]),N("Megha","Cloud","girl",["simple"]),N("Tulsi","Sacred basil","girl",["simple","special"]),N("Mukul","Bud, blossom","boy",["simple"]),N("Manya","Worthy of honor","girl",["unique"]),N("Tarang","Wave","boy",["unique"]),N("Minakshi","Fish-eyed goddess","girl",["powerful","special"]),N("Mohit","Charmed","boy",["popular"]),N("Tanya","Fairy queen","girl",["popular"]),N("Manik","Ruby, gem","boy",["unique"]),N("Medha","Intelligence, Saraswati","girl",["unique","powerful"]),N("Mahesh","Lord Shiva","boy",["popular","powerful","special"]),N("Madhuri","Sweet, charming","girl",["popular"]),N("Tapas","Heat, austerity","boy",["powerful","special"]),N("Mukti","Liberation","girl",["powerful"]),N("Tarini","Savior, Goddess","girl",["powerful","special"]),N("Trilok","Three worlds","boy",["powerful"]),N("Maitri","Friendship","girl",["simple"]),N("Tanmay","Absorbed, engrossed","boy",["popular"]),N("Mahira","Skilled","girl",["popular"]),N("Mishti","Sweet","girl",["popular"]),N("Tej","Radiance","boy",["simple","powerful"]),N("Mahika","Dew drops","girl",["unique"]),N("Tilak","Sacred mark","boy",["simple","powerful"]),N("Mrunal","Lotus stem","girl",["unique"]),N("Murali","Flute","boy",["simple","special"]),N("Manasvi","Intelligent, self-controlled","girl",["unique","powerful"]),N("Madhavan","Lord Krishna","boy",["powerful","special"]),N("Tamanna","Wish, desire","girl",["popular"]),N("Moksha","Liberation","unisex",["powerful","special"]),N("Mohini","Enchantress, Vishnu","girl",["powerful","special"]),N("Mahima","Glory, greatness","girl",["popular"]),N("Mudit","Happy, pleased","boy",["simple"]),N("Mishka","Gift of love","girl",["popular"]),N("Maitreyi","Wise sage woman","girl",["unique","special"]),N("Mangesh","Lord Shiva","boy",["powerful","special"]),N("Meenakshi","Fish-eyed goddess","girl",["powerful","special"]),N("Tejaswini","Radiant woman","girl",["powerful"])],
+            kanya: [N("Parth","Arjun, prince","boy",["popular"]),N("Priya","Beloved","girl",["popular"]),N("Pooja","Worship","girl",["popular"]),N("Naveen","New, fresh","boy",["popular"]),N("Pallavi","New leaves","girl",["popular"]),N("Shaurya","Valor, bravery","boy",["popular","powerful"]),N("Namita","Humble","girl",["simple"]),N("Pavan","Wind, breeze","boy",["simple"]),N("Padma","Lotus","girl",["simple","powerful"]),N("Nikhil","Complete, whole","boy",["popular"]),N("Pranav","Om, sacred syllable","boy",["popular","powerful","special"]),N("Shreya","Auspicious","girl",["popular"]),N("Naman","Salutation","boy",["simple"]),N("Shankar","Lord Shiva","boy",["popular","powerful","special"]),N("Nisha","Night","girl",["simple"]),N("Piyush","Nectar","boy",["popular"]),N("Shashank","Moon","boy",["popular","powerful"]),N("Nandini","Daughter, joyful","girl",["popular"]),N("Prakash","Light","boy",["simple"]),N("Pavitra","Pure, sacred","girl",["powerful"]),N("Nakul","Pandava prince","boy",["unique","special"]),N("Parul","Graceful, beautiful","girl",["simple"]),N("Shubh","Auspicious, good","boy",["simple","powerful"]),N("Neha","Love, rain","girl",["popular"]),N("Nitin","Master of right","boy",["popular"]),N("Pushkar","Sacred lake","boy",["unique","special"]),N("Nayantara","Star of eyes","girl",["unique"]),N("Shivam","Auspicious, Lord Shiva","boy",["popular","powerful"]),N("Padmini","Lotus woman","girl",["unique","special"]),N("Poornima","Full moon","girl",["powerful","special"]),N("Narayan","Lord Vishnu","boy",["powerful","special"]),N("Pragya","Wisdom","girl",["unique","powerful"]),N("Nidhi","Treasure","girl",["popular"]),N("Palak","Eyelid, protector","girl",["simple"]),N("Shivay","Lord Shiva","boy",["popular","powerful","special"]),N("Prithvi","Earth","boy",["powerful"]),N("Nandita","Joyful","girl",["simple"]),N("Navya","Young, fresh","girl",["popular"]),N("Pratham","First","boy",["popular"]),N("Shashwat","Eternal","boy",["powerful"]),N("Nirmala","Clean, pure","girl",["simple"]),N("Shabari","Devotee of Rama","girl",["unique","special"]),N("Shivendra","Lord Shiva","boy",["powerful","special"]),N("Panchali","Draupadi","girl",["unique","special"]),N("Nishant","Dawn, end of night","boy",["popular"]),N("Pankaj","Lotus","boy",["popular"]),N("Shubham","Auspicious","boy",["popular"]),N("Parvati","Goddess of mountains","girl",["popular","powerful","special"]),N("Niranjan","Unblemished","boy",["powerful","special"]),N("Prisha","God's gift","girl",["popular"])],
+            tula: [N("Ravi","Sun","boy",["popular","powerful"]),N("Riya","Singer, graceful","girl",["popular"]),N("Rajesh","King of kings","boy",["popular"]),N("Ritu","Season","girl",["simple"]),N("Rashmi","Ray of light","girl",["popular"]),N("Rohit","Red, sun","boy",["popular"]),N("Radha","Krishna's beloved","girl",["popular","powerful","special"]),N("Ritesh","Lord of truth","boy",["popular"]),N("Rudra","Lord Shiva","boy",["popular","powerful","special"]),N("Richa","Hymn of Rig Veda","girl",["unique","special"]),N("Raj","King, rule","boy",["simple"]),N("Rahul","Capable, efficient","boy",["popular"]),N("Roshni","Light, brightness","girl",["popular"]),N("Ranveer","Brave warrior","boy",["popular","powerful"]),N("Raghav","Lord Rama","boy",["popular","powerful","special"]),N("Rupali","Beautiful","girl",["simple"]),N("Rajat","Silver","boy",["simple"]),N("Rohan","Ascending","boy",["popular"]),N("Tejaswi","Brilliant","unisex",["powerful"]),N("Ram","Lord Rama","boy",["popular","powerful","special"]),N("Tatva","Truth, essence","boy",["unique","powerful"]),N("Rama","Goddess Lakshmi","girl",["powerful","special"]),N("Rajveer","Brave king","boy",["popular","powerful"]),N("Ratna","Gem, jewel","girl",["simple"]),N("Rishabh","Superior, bull","boy",["popular"]),N("Ridhima","Full of love","girl",["popular"]),N("Ragini","Melody, music","girl",["unique"]),N("Rajeshwari","Queen of kings","girl",["powerful","special"]),N("Raunaq","Glow, beauty","unisex",["unique"]),N("Ridhi","Prosperity","girl",["simple"]),N("Rajyashri","Royal glory","girl",["unique","powerful"]),N("Raghunath","Lord Rama","boy",["powerful","special"]),N("Ritika","Generous, flowing","girl",["popular"]),N("Rashmika","Ray of light","girl",["popular"]),N("Rithvik","Priest, Vedic","boy",["popular"]),N("Ramya","Beautiful, delightful","girl",["popular"]),N("Rukmini","Krishna's wife","girl",["popular","powerful","special"]),N("Ravindra","Lord of sun","boy",["powerful"]),N("Rohini","Star, rising","girl",["popular","powerful"]),N("Renuka","Mother of Parashurama","girl",["unique","special"]),N("Rajhans","Royal swan","boy",["unique"]),N("Trilochana","Three-eyed Shiva","boy",["powerful","special"])],
+            vrishchik: [N("Naksh","Moon, feature","boy",["popular"]),N("Nisha","Night","girl",["popular"]),N("Yash","Fame, glory","boy",["popular"]),N("Naina","Eyes","girl",["popular"]),N("Naveen","New, novel","boy",["popular"]),N("Yamini","Night","girl",["unique"]),N("Nikhil","Complete","boy",["popular"]),N("Nitya","Eternal","girl",["popular","powerful"]),N("Yuvan","Young, healthy","boy",["popular"]),N("Nimisha","Blink of an eye","girl",["unique"]),N("Yuvika","Young woman","girl",["unique"]),N("Nilesh","Lord Shiva","boy",["popular","powerful"]),N("Neelima","Blue sky","girl",["unique"]),N("Naman","Salutation","boy",["simple"]),N("Yashvi","Fame, glory","girl",["popular"]),N("Nachiket","Sacred fire","boy",["unique","powerful","special"]),N("Nirvi","Bliss","girl",["unique"]),N("Yogi","One who meditates","boy",["simple","powerful"]),N("Nandita","Joyful","girl",["simple"]),N("Yashodhara","Bearer of glory","girl",["unique","special"]),N("Nirmal","Pure, clean","boy",["simple"]),N("Nikita","Earth","girl",["popular"]),N("Yogesh","Lord of Yoga","boy",["popular","powerful"]),N("Nirmiti","Creation","girl",["unique"]),N("Yukti","Idea, plan","girl",["unique"]),N("Nandish","Lord Shiva","boy",["powerful","special"]),N("Niharika","Dew drop, nebula","girl",["popular"]),N("Nandani","Daughter","girl",["simple"]),N("Neeraj","Lotus","boy",["popular"]),N("Yashika","Success","girl",["popular"]),N("Yashwant","Glorious","boy",["popular","powerful"]),N("Niranjana","Pure, Goddess Durga","girl",["unique","powerful"]),N("Neerja","Lotus","girl",["unique"]),N("Navya","Worth praising","girl",["popular"]),N("Nayanika","Graceful eyes","girl",["unique"]),N("Nirav","Quiet, calm","boy",["simple"]),N("Yamuna","Sacred river","girl",["unique","special"]),N("Yashoda","Krishna's mother","girl",["popular","special"]),N("Naitik","Moral, ethical","boy",["simple"]),N("Yatin","Ascetic","boy",["unique","powerful"]),N("Yuvraj","Crown prince","boy",["popular","powerful"]),N("Nakshatra","Star, celestial","unisex",["unique","powerful"]),N("Yogendra","Lord of Yoga","boy",["powerful"]),N("Narayan","Lord Vishnu","boy",["popular","powerful","special"]),N("Yogini","Female yogi","girl",["powerful","special"]),N("Naivedya","Offering to God","unisex",["unique","special"]),N("Yuvaan","Young, strong","boy",["popular"]),N("Nihsank","Fearless","boy",["unique","powerful"]),N("Narottam","Best among men","boy",["unique","powerful"]),N("Nishtha","Devotion, faith","girl",["unique"])],
+            dhanu: [N("Bhavesh","Lord Shiva","boy",["popular","powerful"]),N("Bhavna","Feelings, sentiments","girl",["popular"]),N("Dhara","Earth, flow","girl",["popular"]),N("Bhoomi","Earth","girl",["popular"]),N("Dhananjay","Arjuna, winner of wealth","boy",["popular","powerful","special"]),N("Bharat","India, ancestor","boy",["popular","powerful"]),N("Dhairya","Patience, courage","boy",["popular"]),N("Bhanumati","Full of light","girl",["unique","powerful"]),N("Bharati","Goddess Saraswati","girl",["powerful","special"]),N("Bhargav","Lord Shiva","boy",["popular","powerful"]),N("Dhriti","Courage","girl",["unique","powerful"]),N("Bhuvan","World","boy",["simple"]),N("Dhvani","Sound, music","girl",["unique"]),N("Bhaskar","Sun, shining","boy",["popular","powerful"]),N("Bhawani","Goddess Parvati","girl",["powerful","special"]),N("Dhanush","Bow, rainbow","boy",["popular"]),N("Bhadra","Blessed","unisex",["simple"]),N("Bhavika","Righteous, emotional","girl",["simple"]),N("Bhrigu","Great sage","boy",["unique","special"]),N("Dharini","Earth","girl",["unique"]),N("Dharma","Righteousness","boy",["powerful","special"]),N("Bhagyashri","Fortunate beauty","girl",["popular"]),N("Bhavani","Goddess Durga","girl",["popular","powerful","special"]),N("Dhanvantari","God of medicine","boy",["unique","powerful","special"]),N("Bhoomika","Role, land","girl",["popular"]),N("Dheeraj","Patience","boy",["popular"]),N("Bhuvanesh","Lord of world","boy",["powerful"]),N("Bhairav","Lord Shiva","boy",["powerful","special"]),N("Dhyaneshwari","Goddess of meditation","girl",["unique","powerful","special"]),N("Dharmendra","Lord of dharma","boy",["popular","powerful"]),N("Bharadwaj","Great sage","boy",["unique","special"]),N("Bhuvaneshwari","Queen of the world","girl",["unique","powerful","special"]),N("Bhagirathi","Sacred Ganga","girl",["unique","special"]),N("Bhagyalakshmi","Goddess of fortune","girl",["powerful","special"]),N("Dhirendra","Lord of courage","boy",["powerful"]),N("Dheeman","Intelligent","boy",["unique"]),N("Bhavyansh","Part of grandness","boy",["unique"]),N("Dhanvi","Wealthy","girl",["unique"]),N("Dheera","Courageous woman","girl",["unique","powerful"]),N("Dhimahi","We meditate","boy",["unique","powerful","special"])],
+            makar: [N("Ganga","Sacred river","girl",["popular","powerful","special"]),N("Khushi","Happiness","girl",["popular"]),N("Girish","Lord Shiva","boy",["popular","powerful"]),N("Gauri","Fair, Parvati","girl",["popular","powerful"]),N("Garv","Pride","boy",["popular"]),N("Gokul","Cowherd place","boy",["simple","special"]),N("Geetika","Little song","girl",["unique"]),N("Gaurang","Fair complexioned","boy",["unique"]),N("Gitanjali","Song offering","girl",["unique","special"]),N("Gagan","Sky, heaven","boy",["simple"]),N("Geeta","Song, Bhagavad Gita","girl",["simple","special"]),N("Ganesh","Lord Ganesha","boy",["popular","powerful","special"]),N("Gayatri","Sacred verse","girl",["popular","powerful","special"]),N("Garima","Warmth, grace","girl",["popular"]),N("Gadhadhar","Mace wielder, Vishnu","boy",["powerful","special"]),N("Gunjan","Buzzing","girl",["simple"]),N("Giridhar","Mountain bearer, Krishna","boy",["powerful","special"]),N("Gorakh","Cowherd","boy",["unique","special"]),N("Gurudas","Servant of guru","boy",["simple","special"]),N("Gopinath","Lord of gopis","boy",["powerful","special"]),N("Girdhar","Krishna","boy",["powerful","special"]),N("Govardhan","Mountain lifted by Krishna","boy",["powerful","special"]),N("Ganpati","Lord Ganesha","boy",["popular","powerful","special"]),N("Gyaneshwari","Goddess of knowledge","girl",["unique","powerful","special"]),N("Ghanashyam","Dark cloud, Krishna","boy",["popular","powerful","special"]),N("Gajanand","Elephant-faced, Ganesha","boy",["powerful","special"]),N("Gurudev","Divine teacher","boy",["powerful","special"]),N("Kanhaiya","Lord Krishna","boy",["popular","powerful","special"]),N("Giriraj","King of mountains","boy",["powerful"]),N("Gandharva","Celestial musician","boy",["unique","special"]),N("Kalpana","Imagination","girl",["popular"]),N("Gauranga","Fair body, Chaitanya","boy",["unique","special"]),N("Gyanendra","Lord of knowledge","boy",["powerful"]),N("Gopal","Cowherd, Krishna","boy",["popular","powerful","special"]),N("Gangadhar","Lord Shiva","boy",["powerful","special"]),N("Khushboo","Fragrance","girl",["popular"]),N("Gyaneshwar","Lord of knowledge","boy",["powerful","special"]),N("Gaurishankar","Shiva and Parvati","boy",["powerful","special"]),N("Kalyani","Auspicious","girl",["popular","powerful"]),N("Gopika","Cowherd woman","girl",["simple","special"]),N("Kshama","Forgiveness","girl",["unique","powerful"])],
+            kumbh: [N("Sai","Divine","unisex",["popular","powerful","special"]),N("Saanvi","Goddess Lakshmi","girl",["popular","powerful"]),N("Sagar","Ocean","boy",["popular"]),N("Suraj","Sun","boy",["popular"]),N("Sara","Essence, pure","girl",["popular"]),N("Soham","I am that","boy",["popular","powerful","special"]),N("Simran","Meditation, remembrance","girl",["popular"]),N("Sanya","Radiant","girl",["popular"]),N("Gopal","Krishna","boy",["popular","powerful","special"]),N("Sakshi","Witness","girl",["popular"]),N("Sudhir","Wise, resolute","boy",["simple"]),N("Daksh","Skillful","boy",["popular"]),N("Suhana","Pleasant","girl",["popular"]),N("Govind","Lord Krishna","boy",["popular","powerful","special"]),N("Swara","Musical note","girl",["unique"]),N("Savitri","Goddess, sun","girl",["powerful","special"]),N("Samarth","Capable, powerful","boy",["popular","powerful"]),N("Sunil","Very blue","boy",["popular"]),N("Sahil","Shore, guide","boy",["popular"]),N("Sanjana","Gentle, patient","girl",["popular"]),N("Surya","Sun god","boy",["popular","powerful","special"]),N("Sumit","Good friend","boy",["popular"]),N("Saket","Heaven, Ayodhya","boy",["unique","special"]),N("Shivani","Goddess Parvati","girl",["popular","powerful"]),N("Suniti","Good conduct","girl",["simple"]),N("Srishti","Creation","girl",["popular"]),N("Soumya","Gentle, moon-like","unisex",["simple"]),N("Satvik","Pure, virtuous","boy",["powerful"]),N("Sudha","Nectar","girl",["simple"]),N("Sambhavi","Goddess Parvati","girl",["powerful","special"]),N("Sarvesh","Lord of all","boy",["powerful"]),N("Siddhant","Principle, doctrine","boy",["popular"]),N("Sahana","Patience","girl",["unique"]),N("Swaroop","True form","boy",["powerful"]),N("Sudarshan","Beautiful, Vishnu's discus","boy",["popular","powerful","special"]),N("Samhita","Vedic compilation","girl",["unique","special"]),N("Sukanya","Beautiful girl","girl",["unique","special"]),N("Sadhana","Spiritual practice","girl",["powerful","special"]),N("Sukhdev","God of happiness","boy",["powerful","special"]),N("Satyanarayan","Truth, Vishnu","boy",["popular","powerful","special"]),N("Sahasra","Thousand","unisex",["unique","powerful"]),N("Satyavrat","Devoted to truth","boy",["powerful","special"]),N("Samriddhi","Prosperity","girl",["unique"]),N("Govinda","Lord Krishna","boy",["popular","powerful","special"]),N("Saransh","Summary, essence","boy",["popular"])],
+            meen: [N("Devesh","Lord of gods","boy",["popular","powerful"]),N("Chaitra","First month, spring","girl",["unique"]),N("Deepak","Lamp, light","boy",["popular"]),N("Chitra","Picture, colorful","girl",["popular"]),N("Dhruv","Pole star","boy",["popular","powerful"]),N("Chitralekha","Picture line","girl",["unique","special"]),N("Jhanvi","River Ganga","girl",["popular","special"]),N("Dushyant","Great king","boy",["unique","special"]),N("Chinmay","Full of knowledge","boy",["powerful"]),N("Disha","Direction","girl",["simple"]),N("Chandrika","Moonlight","girl",["unique","powerful"]),N("Devanand","Joy of God","boy",["powerful"]),N("Chiranjivi","Immortal","boy",["powerful","special"]),N("Chaitali","Born in Chaitra","girl",["unique"]),N("Dhananjay","Arjuna","boy",["popular","powerful","special"]),N("Chandan","Sandalwood","boy",["simple"]),N("Champa","Flower","girl",["simple"]),N("Chanchal","Restless, playful","girl",["simple"]),N("Chintamani","Wish-fulfilling gem","boy",["unique","powerful","special"]),N("Dharmesh","Lord of dharma","boy",["popular","powerful"]),N("Chaya","Shade, shadow","girl",["simple"]),N("Dhruvesh","Lord of the pole star","boy",["unique","powerful"]),N("Chandrashekhar","Lord Shiva","boy",["powerful","special"]),N("Devendra","King of gods","boy",["popular","powerful"]),N("Chetna","Consciousness","girl",["unique"]),N("Digvijay","World conqueror","boy",["powerful"]),N("Charulata","Beautiful creeper","girl",["unique"]),N("Dhanveer","Charitable hero","boy",["powerful"]),N("Jhanvika","Sacred river","girl",["unique"]),N("Chinmayi","Full of consciousness","girl",["unique","powerful"]),N("Chandrabhaga","River","girl",["unique","special"]),N("Devaraja","King of gods","boy",["powerful"]),N("Chitrasena","Celestial musician","boy",["unique","special"]),N("Dhyaneshwar","Lord of meditation","boy",["powerful","special"]),N("Chitragupta","God of karma","boy",["powerful","special"]),N("Chakradhar","Vishnu, disc bearer","boy",["powerful","special"]),N("Chandraprabha","Moon's light","girl",["unique","powerful"]),N("Devakinandan","Son of Devaki, Krishna","boy",["powerful","special"]),N("Digant","Horizon","boy",["unique"]),N("Chameli","Jasmine","girl",["simple"]),N("Dharanendra","Lord of the earth","boy",["powerful"]),N("Chandramukhi","Moon-faced","girl",["unique"])]
+        };
+
+        // STATE
+        let state = {
+            currentView: 'home',
+            selectedRashi: null,
+            selectedName: null,
+            previousView: 'home',
+            favorites: [],
+            genderFilter: 'all',
+            typeFilter: 'all',
+            searchQuery: ''
+        };
+
+        // TRANSLITERATION
+        function toHindi(name) {
+            const map = {
+                'kh': 'ख', 'gh': 'घ', 'ch': 'च', 'chh': 'छ', 'jh': 'झ',
+                'th': 'थ', 'dh': 'ध', 'ph': 'फ', 'bh': 'भ', 'sh': 'श',
+                'aa': 'आ', 'ii': 'ई', 'uu': 'ऊ', 'ai': 'ऐ', 'au': 'औ',
+                'k': 'क', 'g': 'ग', 'ng': 'ङ', 'c': 'च', 'j': 'ज',
+                't': 'त', 'd': 'द', 'n': 'न', 'p': 'प', 'b': 'ब',
+                'm': 'म', 'y': 'य', 'r': 'र', 'l': 'ल', 'v': 'व', 'w': 'व',
+                's': 'स', 'h': 'ह',
+                'a': 'अ', 'i': 'इ', 'u': 'उ', 'e': 'ए', 'o': 'ओ'
+            };
+            let hindi = '';
+            let i = 0;
+            const lower = name.toLowerCase();
+            while (i < lower.length) {
+                let matched = false;
+                for (let len = 3; len >= 1; len--) {
+                    const substr = lower.substr(i, len);
+                    if (map[substr]) {
+                        hindi += map[substr];
+                        i += len;
+                        matched = true;
+                        break;
+                    }
+                }
+                if (!matched) i++;
+            }
+            return hindi || name;
+        }
+
+        function toGujarati(name) {
+            const map = {
+                'kh': 'ખ', 'gh': 'ઘ', 'ch': 'ચ', 'chh': 'છ', 'jh': 'ઝ',
+                'th': 'થ', 'dh': 'ધ', 'ph': 'ફ', 'bh': 'ભ', 'sh': 'શ',
+                'aa': 'આ', 'ii': 'ઈ', 'uu': 'ઊ', 'ai': 'ૈ', 'au': 'ૌ',
+                'k': 'ક', 'g': 'ગ', 'ng': 'ગ', 'c': 'ચ', 'j': 'જ',
+                't': 'ત', 'd': 'દ', 'n': 'ન', 'p': 'પ', 'b': 'બ',
+                'm': 'મ', 'y': 'ય', 'r': 'ર', 'l': 'લ', 'v': 'વ', 'w': 'વ',
+                's': 'સ', 'h': 'હ',
+                'a': 'અ', 'i': 'ઇ', 'u': 'ુ', 'e': 'ે', 'o': 'ો'
+            };
+            let gujarati = '';
+            let i = 0;
+            const lower = name.toLowerCase();
+            while (i < lower.length) {
+                let matched = false;
+                for (let len = 3; len >= 1; len--) {
+                    const substr = lower.substr(i, len);
+                    if (map[substr]) {
+                        gujarati += map[substr];
+                        i += len;
+                        matched = true;
+                        break;
+                    }
+                }
+                if (!matched) i++;
+            }
+            return gujarati || name;
+        }
+
+        // STORAGE
+        function loadFavorites() {
+            const saved = localStorage.getItem('vedic_favorites');
+            state.favorites = saved ? JSON.parse(saved) : [];
+        }
+
+        function saveFavorites() {
+            localStorage.setItem('vedic_favorites', JSON.stringify(state.favorites));
+        }
+
+        function isFavorite(rashiId, nameText) {
+            return state.favorites.some(fav => fav.rashi === rashiId && fav.name === nameText);
+        }
+
+        function toggleFavorite(rashiId, nameText) {
+            const index = state.favorites.findIndex(fav => fav.rashi === rashiId && fav.name === nameText);
+            if (index > -1) {
+                state.favorites.splice(index, 1);
+            } else {
+                state.favorites.push({rashi: rashiId, name: nameText});
+            }
+            saveFavorites();
+        }
+
+        // VIEWS
+        function showView(viewName) {
+            document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+            document.getElementById(viewName).classList.add('active');
+            state.previousView = state.currentView;
+            state.currentView = viewName;
+            closeMenu();
+
+            if (viewName === 'home') renderRashiGrid();
+            else if (viewName === 'favorites') renderFavorites();
+            else if (viewName === 'suggest') renderSuggestForm();
+        }
+
+        function goBack() {
+            if (state.previousView === 'rashi-detail') {
+                showRashiDetail(state.selectedRashi);
+            } else {
+                showView('home');
+            }
+        }
+
+        function renderRashiGrid() {
+            const grid = document.getElementById('rashiGrid');
+            grid.innerHTML = '';
+            RASHIS.forEach(rashi => {
+                const names = NAMES_BY_RASHI[rashi.id];
+                const card = document.createElement('div');
+                card.className = 'rashi-card';
+                card.onclick = () => showRashiDetail(rashi.id);
+                card.innerHTML = `<div class="rashi-card-content"><div class="rashi-symbol">${rashi.symbol}</div><div class="rashi-names"><div class="rashi-hindi">${rashi.name}</div><div class="rashi-english">${rashi.eng}</div></div><div class="rashi-details"><div class="detail-item"><div class="detail-label">Element</div><div class="detail-value">${rashi.element}</div></div><div class="detail-item"><div class="detail-label">Ruler</div><div class="detail-value">${rashi.ruler}</div></div></div><div class="rashi-count">${names.length} names</div></div>`;
+                grid.appendChild(card);
+            });
+        }
+
+        function showRashiDetail(rashiId) {
+            state.selectedRashi = rashiId;
+            state.previousView = state.currentView;
+            const rashi = RASHIS.find(r => r.id === rashiId);
+            const names = NAMES_BY_RASHI[rashiId];
+            
+            document.getElementById('detailSymbol').textContent = rashi.symbol;
+            document.getElementById('detailEnglishName').textContent = rashi.eng;
+            document.getElementById('detailHindiName').textContent = rashi.name;
+            
+            const grid = document.getElementById('rashiNamesGrid');
+            grid.innerHTML = '';
+            const filtered = filterNames_internal(names, rashiId);
+            
+            filtered.forEach(nameObj => {
+                const card = document.createElement('div');
+                card.className = 'name-card';
+                const isFav = isFavorite(rashiId, nameObj.name);
+                card.innerHTML = `<button class="name-favorite ${isFav ? 'active' : ''}" onclick="event.stopPropagation(); toggleFavClick('${rashiId}', '${nameObj.name.replace(/'/g, "\\'")}');">${isFav ? '♥' : '♡'}</button><div class="name-card-content"><div class="name-text">${nameObj.name}</div><div class="name-meaning">${nameObj.meaning}</div><div class="name-meta"><span class="name-gender">${nameObj.gender === 'unisex' ? 'Unisex' : nameObj.gender.charAt(0).toUpperCase() + nameObj.gender.slice(1)}</span>${nameObj.tags.map(t => '<span class="name-tag name-tag-'+t+'">'+t+'</span>').join('')}</div></div>`;
+                card.onclick = () => showNameDetail(rashiId, nameObj.name);
+                grid.appendChild(card);
+            });
+            
+            showView('rashi-detail');
+        }
+
+        function showNameDetail(rashiId, nameText) {
+            state.selectedRashi = rashiId;
+            state.selectedName = nameText;
+            state.previousView = 'rashi-detail';
+            const rashi = RASHIS.find(r => r.id === rashiId);
+            const nameObj = NAMES_BY_RASHI[rashiId].find(n => n.name === nameText);
+            const isFav = isFavorite(rashiId, nameText);
+
+            document.getElementById('nameEnglish').textContent = nameText;
+            document.getElementById('nameHindi').textContent = toHindi(nameText);
+            document.getElementById('nameGujarati').textContent = toGujarati(nameText);
+            document.getElementById('nameMeaningEnglish').textContent = nameObj.meaning;
+            document.getElementById('nameMeaning').textContent = nameObj.meaning;
+
+            document.getElementById('detailGender').textContent = nameObj.gender === 'unisex' ? 'Unisex' : nameObj.gender.charAt(0).toUpperCase() + nameObj.gender.slice(1);
+            document.getElementById('detailRashiName').textContent = `${rashi.symbol} ${rashi.eng}`;
+            document.getElementById('detailElement').textContent = rashi.element;
+            document.getElementById('detailRuler').textContent = rashi.ruler;
+
+            const tagsContainer = document.getElementById('nameTags');
+            tagsContainer.innerHTML = nameObj.tags.map(tag => `<span class="tag">${tag.charAt(0).toUpperCase() + tag.slice(1)}</span>`).join('');
+
+            document.getElementById('favBtnText').textContent = isFav ? '♥ Remove from Favorites' : '♡ Add to Favorites';
+            showView('name-detail');
+        }
+
+        function toggleFavClick(rashiId, nameText) {
+            toggleFavorite(rashiId, nameText);
+            showRashiDetail(rashiId);
+        }
+
+        function toggleFavoriteFromDetail() {
+            const isFav = isFavorite(state.selectedRashi, state.selectedName);
+            toggleFavorite(state.selectedRashi, state.selectedName);
+            document.getElementById('favBtnText').textContent = isFav ? '♡ Add to Favorites' : '♥ Remove from Favorites';
+        }
+
+        function renderFavorites() {
+            const actionDiv = document.getElementById('favoritesActions');
+            const emptyDiv = document.getElementById('favoritesEmpty');
+            const listDiv = document.getElementById('favoritesList');
+
+            if (state.favorites.length === 0) {
+                actionDiv.style.display = 'none';
+                emptyDiv.style.display = 'block';
+                listDiv.innerHTML = '';
+                return;
+            }
+
+            actionDiv.style.display = 'flex';
+            emptyDiv.style.display = 'none';
+            listDiv.innerHTML = '';
+
+            state.favorites.forEach(fav => {
+                const rashi = RASHIS.find(r => r.id === fav.rashi);
+                const nameObj = NAMES_BY_RASHI[fav.rashi].find(n => n.name === fav.name);
+                const card = document.createElement('div');
+                card.className = 'name-card';
+                card.innerHTML = `<div class="name-card-content"><div class="name-text">${fav.name}</div><div class="name-meaning">${nameObj.meaning}</div><div class="name-meta"><span class="name-gender">${nameObj.gender === 'unisex' ? 'Unisex' : nameObj.gender.charAt(0).toUpperCase() + nameObj.gender.slice(1)}</span><button class="name-favorite active" onclick="event.stopPropagation(); removeFav('${fav.rashi}', '${fav.name.replace(/'/g, "\\'")}');">♥</button></div></div>`;
+                card.onclick = () => showNameDetail(fav.rashi, fav.name);
+                listDiv.appendChild(card);
+            });
+        }
+
+        function removeFav(rashiId, nameText) {
+            toggleFavorite(rashiId, nameText);
+            renderFavorites();
+        }
+
+        function shareAsText() {
+            let text = '✨ My Favorite Baby Names ✨\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n';
+            const byRashi = {};
+            state.favorites.forEach(fav => {
+                if (!byRashi[fav.rashi]) byRashi[fav.rashi] = [];
+                byRashi[fav.rashi].push(fav.name);
+            });
+            Object.keys(byRashi).forEach(rashiId => {
+                const rashi = RASHIS.find(r => r.id === rashiId);
+                text += `${rashi.symbol} ${rashi.eng}\n`;
+                byRashi[rashiId].forEach(nameText => {
+                    const nameObj = NAMES_BY_RASHI[rashiId].find(n => n.name === nameText);
+                    text += `• ${nameText} - ${nameObj.meaning} (${nameObj.gender})\n`;
+                });
+                text += '\n';
+            });
+            text += 'Selected with love using Vedic Rashi Names';
+            navigator.clipboard.writeText(text).then(() => alert('Favorites copied!'));
+        }
+
+        function clearAllFavorites() {
+            if (confirm('Clear all favorites?')) {
+                state.favorites = [];
+                saveFavorites();
+                renderFavorites();
+            }
+        }
+
+        function surpriseMe() {
+            const gender = document.getElementById('surpriseGender').value;
+            const rashiId = document.getElementById('surpriseRashi').value;
+            let candidates = [];
+            const rashis = rashiId ? [rashiId] : Object.keys(NAMES_BY_RASHI);
+            rashis.forEach(rId => {
+                const names = NAMES_BY_RASHI[rId];
+                names.forEach(nameObj => {
+                    if (gender === 'all' || nameObj.gender === gender) {
+                        candidates.push({...nameObj, rashi: rId});
+                    }
+                });
+            });
+            if (candidates.length === 0) {
+                alert('No names found');
+                return;
+            }
+            const chosen = candidates[Math.floor(Math.random() * candidates.length)];
+            const rashi = RASHIS.find(r => r.id === chosen.rashi);
+            document.getElementById('surpriseName').textContent = chosen.name;
+            document.getElementById('surpriseMeaning').textContent = chosen.meaning;
+            document.getElementById('surpriseRashiLabel').textContent = `${rashi.symbol} ${rashi.eng}`;
+            state.selectedRashi = chosen.rashi;
+            state.selectedName = chosen.name;
+            document.getElementById('surpriseResult').classList.add('active');
+        }
+
+        function addSurpriseToFavorites() {
+            toggleFavorite(state.selectedRashi, state.selectedName);
+            const isFav = isFavorite(state.selectedRashi, state.selectedName);
+            alert(isFav ? 'Added!' : 'Removed');
+        }
+
+        function renderSuggestForm() {
+            const container = document.getElementById('suggestRashiSections');
+            container.innerHTML = '';
+            RASHIS.forEach(rashi => {
+                const names = NAMES_BY_RASHI[rashi.id];
+                const boys = names.filter(n => n.gender === 'boy' || n.gender === 'unisex');
+                const girls = names.filter(n => n.gender === 'girl' || n.gender === 'unisex');
+                const section = document.createElement('div');
+                section.className = 'suggest-rashi-section';
+                section.innerHTML = `<div class="suggest-rashi-title"><span class="suggest-rashi-symbol">${rashi.symbol}</span><span>${rashi.eng}</span></div><div class="suggest-selects"><div class="select-group"><label>Boy Name</label><select data-rashi="${rashi.id}" data-gender="boy"><option value="">Select boy name...</option>${boys.map(n => `<option value="${n.name}">${n.name}</option>`).join('')}</select></div><div class="select-group"><label>Girl Name</label><select data-rashi="${rashi.id}" data-gender="girl"><option value="">Select girl name...</option>${girls.map(n => `<option value="${n.name}">${n.name}</option>`).join('')}</select></div></div>`;
+                container.appendChild(section);
+            });
+        }
+
+        function submitSuggestions(event) {
+            event.preventDefault();
+            let suggestions = {};
+            let hasSelection = false;
+            document.querySelectorAll('select[data-rashi]').forEach(select => {
+                const rashiId = select.dataset.rashi;
+                const gender = select.dataset.gender;
+                const value = select.value;
+                if (value) {
+                    hasSelection = true;
+                    if (!suggestions[rashiId]) suggestions[rashiId] = {};
+                    suggestions[rashiId][gender] = value;
+                }
+            });
+            if (!hasSelection) {
+                alert('Select at least one name');
+                return;
+            }
+            let text = '🎉 My Suggested Baby Names 🎉\n━━━━━━━━━━━━━━━━━━━━━━━━\n\n';
+            Object.keys(suggestions).forEach(rashiId => {
+                const rashi = RASHIS.find(r => r.id === rashiId);
+                text += `${rashi.symbol} ${rashi.eng}\n`;
+                if (suggestions[rashiId].boy) {
+                    const nameObj = NAMES_BY_RASHI[rashiId].find(n => n.name === suggestions[rashiId].boy);
+                    text += `👦 ${suggestions[rashiId].boy} - ${nameObj.meaning}\n`;
+                }
+                if (suggestions[rashiId].girl) {
+                    const nameObj = NAMES_BY_RASHI[rashiId].find(n => n.name === suggestions[rashiId].girl);
+                    text += `👧 ${suggestions[rashiId].girl} - ${nameObj.meaning}\n`;
+                }
+                text += '\n';
+            });
+            text += 'Suggested using Vedic Rashi Names';
+            document.getElementById('shareText').textContent = text;
+            document.getElementById('sharePreview').classList.add('active');
+        }
+
+        function copyToClipboard() {
+            const text = document.getElementById('shareText').textContent;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = event.target;
+                btn.textContent = '✓ Copied!';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy to Share';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        function filterNames_internal(names, rashiId) {
+            return names.filter(nameObj => {
+                const genderMatch = state.genderFilter === 'all' || nameObj.gender === state.genderFilter;
+                const typeMatch = state.typeFilter === 'all' || nameObj.tags.includes(state.typeFilter);
+                const searchMatch = !state.searchQuery || nameObj.name.toLowerCase().includes(state.searchQuery.toLowerCase()) || nameObj.meaning.toLowerCase().includes(state.searchQuery.toLowerCase());
+                return genderMatch && typeMatch && searchMatch;
+            });
+        }
+
+        function filterNames() {
+            state.searchQuery = document.getElementById('searchInput').value;
+            if (state.currentView === 'home') {
+                renderRashiGrid();
+            } else if (state.currentView === 'rashi-detail') {
+                showRashiDetail(state.selectedRashi);
+            }
+        }
+
+        function filterByGender(gender) {
+            state.genderFilter = gender;
+            document.querySelectorAll('.filter-group:nth-child(2) .filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            filterNames();
+        }
+
+        function filterByType(type) {
+            state.typeFilter = type;
+            document.querySelectorAll('.filter-group:nth-child(3) .filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            filterNames();
+        }
+
+        function toggleMenu() {
+            document.getElementById('hamburger').classList.toggle('active');
+            document.getElementById('nav-menu').classList.toggle('mobile-nav-open');
+        }
+
+        function closeMenu() {
+            document.getElementById('hamburger').classList.remove('active');
+            document.getElementById('nav-menu').classList.remove('mobile-nav-open');
+        }
+
+        document.getElementById('hamburger').addEventListener('click', toggleMenu);
+        loadFavorites();
+        renderRashiGrid();
+    </script>
+</body>
+</html>
